@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	<div align="center">
+		<h1> Create New Course </h1>
+		</br>
+		<div class="col-sm-4">
+			<form action="#" th:action="@{/save}" th:object="${course}" method = "post">
+
+
+				<div alight="left">
+					<tr>
+						<label class="form-label">Course Name</label>
+
+						<td>
+							<input type="hidden" th:field="*{id}" />
+							<input type="text" th:field="*{coursename}" class="form-control"
+								placeholder="Course name"/>
+						</td>
+					</tr>
+				</div>
+
+				<div alight="left">
+					<tr>
+						<label class=" form-label">Duration</label>
+
+						<td>
+							<input type="hidden" th:field="*{id}" />
+							<input type="text" th:field="*{duration}" class="form-control" placeholder="duration" />
+						</td>
+					</tr>
+				</div>
+
+
+				<br>
+				</tr>
+				<td colspan="2"><button type="submit" class="btn btn-info"> Save </button></td>
+				</tr>
+			</form>
+		</div>
+		</div>
+
+</body>
+
+</html>

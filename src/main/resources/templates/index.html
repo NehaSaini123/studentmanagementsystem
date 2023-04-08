@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<div>
+		<h2>Course Creation</h2>
+		<tr>
+			<div align="left">
+				<h3>
+					<a th:href="@{'/addcourse'}">Add new</a>
+				</h3>
+			</div>
+		</tr>
+
+		<div class="col-sm-8" align="center">
+			<div class="panel-body" align="center">
+
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th>Course ID</th>
+							<th>Course Name</th>
+							<th>Duration</th>
+							<th>edit</th>
+							<th>delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="course : ${listcourse}">
+							<td th:text="${course.id}">Course ID</td>
+							<td th:text="${course.coursename}">Course Name</td>
+							<td th:text="${course.duration}">Duration</td>
+
+							<td><a th:href="@{'/edit/' + ${course.id}}">Edit </a></td>
+
+							<td><a th:href="@{'/delete/' + ${course.id}}">Delete</a></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
